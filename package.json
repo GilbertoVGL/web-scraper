@@ -1,0 +1,28 @@
+{
+  "name": "web-scrapper-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./src/index.js"
+  },
+  "dependencies": {
+    "@types/node": "^14.6.0",
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "iconv-lite": "^0.5.0",
+    "mimelib": "^0.3.1",
+    "mongoose": "^5.10.5",
+    "node-cron": "^2.0.3",
+    "nodemon": "^1.19.4",
+    "puppeteer": "^2.0.0",
+    "request": "^2.88.0",
+    "utils": "^0.3.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
