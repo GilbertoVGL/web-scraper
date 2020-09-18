@@ -11,7 +11,7 @@ const realtyScrapper = require('./models/realtyScrapper');
 // const endpoints = require('./endpoints');
 // const realtyScrapperEndpoint = new endpoints.RealtyScrapperEndpoint();
 
-console.log('started script');
+console.log('started scraper worker');
 // cron.schedule("* * * * *", async () => {
 cron.schedule("0 0 * * *", async () => {
     console.log('started cron schedule');
