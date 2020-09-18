@@ -1,12 +1,12 @@
 "use strict"
 const MongoClient = require('mongodb').MongoClient;
-const dbConfig = require('../config/config');
+// const dbConfig = require('../config/config');
 
 class RealtyModel {
     #client
     async connectToRealtiesDb() {
         return new Promise((resolve, reject) => {
-            const uri = `mongodb+srv://${dbConfig.user}:${dbConfig.password}@${dbConfig.cluster}.jstzv.mongodb.net/${dbConfig.dbName}?retryWrites=true&w=majority`;
+            const uri = `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}.jstzv.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
             this.#client = new MongoClient(uri, { useNewUrlParser: true });
 
             this.#client.connect(err => {
@@ -14,7 +14,7 @@ class RealtyModel {
                     reject('unable to connect to Mongo: ', err);
                     return;
                 }
-                const db = this.#client.db(dbConfig.dbName);
+                const db = this.#client.db(process.env.DB_NAME);
                 resolve(db);
             });
         });
