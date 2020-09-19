@@ -14,19 +14,12 @@ const realtyScrapper = require('./models/realtyScrapper');
 console.log('started scraper worker');
 // cron.schedule("* * * * *", async () => {
 
-// cron.schedule("0 0 * * *", async () => {
-//     console.log('started cron schedule');
-//     const scraper = new realtyScrapper.RealtyScrapper();
-//     const result = await scraper.getRealties();
-//     console.log('result =>> ', result);
-// });
-(async () => {
+cron.schedule("0 0 * * *", async () => {
     console.log('started cron schedule');
-    console.log('started cron schedule =>> ', process.env.DB_NAME);
     const scraper = new realtyScrapper.RealtyScrapper();
     const result = await scraper.getRealties();
     console.log('result =>> ', result);
-})()
+});
 
 // cron.schedule("0 0 * * *", () => realtyScrapperEndpoint.get());
 // cron.schedule("* * * * *", () => realtyScrapperEndpoint.get());
