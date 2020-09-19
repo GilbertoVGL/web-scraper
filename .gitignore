@@ -2,6 +2,7 @@
 # Edit at https://www.gitignore.io/?templates=node,vuejs
 server/db/config/config.json
 src/db/config/
+.env
 ### Node ###
 # Logs
 logs
