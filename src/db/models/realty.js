@@ -11,7 +11,7 @@ class RealtyModel {
 
             this.#client.connect(err => {
                 if (err) {
-                    reject('unable to connect to Mongo: ', err);
+                    reject({unable_to_connect: err});
                     return;
                 }
                 const db = this.#client.db(process.env.DB_NAME);
