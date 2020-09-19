@@ -11,6 +11,7 @@ class RealtyModel {
 
             this.#client.connect(err => {
                 if (err) {
+                    console.log('err =>> ', err);
                     reject({unable_to_connect: err});
                     return;
                 }
